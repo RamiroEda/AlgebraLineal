@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Proyecto de Algebra Lineal</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}, jax: ["input/TeX","output/HTML-CSS"], displayAlign: "left"});
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    <style media="screen">
+      .dropdown-content{
+        width: auto !important
+      }
+      .dropdown-content > li{
+        width: 200px !important
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="M1-container card card-default col m6 s12">
+          <div class="card-content">
+            <a class="material-icons valign-wrapper dropdown-button" data-beloworigin="true" href='#' data-activates='dropdownM1' style="float:right;">more_vert</a>
+            <ul id='dropdownM1' class="dropdown-content">
+              <li><a href="#!" onclick="transMatriz(this)">Matriz transpuesta</a></li>
+              <li><a href="#!" onclick="deterMatriz(this)">Determinante</a></li>
+            </ul>
+            <span class="card-title">Matriz 1</span>
+            <div class="tap-target" data-activates="select">
+              <div class="tap-target-content">
+                <h5>Calculos</h5>
+                <p>Para generar los calculos de la matriz selecciona una de las opciones y automaticamente te dara el resultado</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 m6">
+                <input id="m1-filas" type="number" min="0" max="25" class="validate">
+                <label for="m1-filas">Filas</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input id="m1-col" type="number" min="0" max="25" class="validate">
+                <label for="m1-col">Columnas</label>
+              </div>
+            </div>
+            <div class="M1 Matriz row" style="overflow: auto; position: static"></div>
+          </div>
+        </div>
+        <div class="M2-container card card-default col m6 s12">
+          <div class="card-content">
+            <a class="material-icons valign-wrapper dropdown-button" data-beloworigin="true" href='#' data-activates='dropdownM2' style="float:right;">more_vert</a>
+            <ul id='dropdownM2' class='dropdown-content'>
+              <li><a href="#!" onclick="transMatriz(this)">Matriz transpuesta</a></li>
+              <li><a href="#!" onclick="deterMatriz(this)">Determinante</a></li>
+            </ul>
+            <span class="card-title">Matriz 2</span>
+            <div class="row">
+              <div class="input-field col s12 m6">
+                <input id="m2-filas" type="number" min="0" max="25" class="validate">
+                <label for="m2-filas">Filas</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input id="m2-col" type="number" min="0" max="25" class="validate">
+                <label for="m2-col">Columnas</label>
+              </div>
+            </div>
+            <div class="M2 Matriz row" style="overflow: auto; position: static"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="Result-container card card-default col s12">
+          <div class="card-content">
+            <span class="card-title">Resultado</span>
+            <div class="row">
+              <div class="col s12 m4">
+                <select class="opSelect" onchange="selectOption(this)">
+                  <option value="0" selected disabled>Selecciona una opcion</option>
+                  <option value="1">Suma</option>
+                  <option value="2">Multiplicacion</option>
+                </select>
+              </div>
+            </div>
+            <div class="row" style="overflow: auto; position: static">
+              <blockquote class="respuesta"></blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <textarea id="copy" rows="80" cols="80" style="position: absolute!important; top: -5000px"></textarea>
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>if (window.module) module = window.module;</script>
+  </body>
+</html>
