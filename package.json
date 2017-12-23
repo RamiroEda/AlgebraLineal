@@ -1,0 +1,26 @@
+{
+  "name": "algebralineal",
+  "version": "1.0.0",
+  "description": "Calculo de matrices",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "build": {
+    "appId": "com.ramir.algebralineal",
+    "productName": "Proyecto de Álgebra Lineal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamiroEda/AlgebraLineal.git"
+  },
+  "author": "Ramiro Estrada García, Andrea Rebeca Hernández García",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RamiroEda/AlgebraLineal/issues"
+  },
+  "homepage": "https://github.com/RamiroEda/AlgebraLineal#readme",
+  "devDependencies": {
+    "electron": "^1.7.9"
+  }
+}

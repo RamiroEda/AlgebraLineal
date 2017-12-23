@@ -18,61 +18,64 @@
       .dropdown-content > li{
         width: 200px !important
       }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="M1-container card card-default col m6 s12">
-          <div class="card-content">
-            <a class="material-icons valign-wrapper dropdown-button" data-beloworigin="true" href='#' data-activates='dropdownM1' style="float:right;">more_vert</a>
-            <ul id='dropdownM1' class="dropdown-content">
-              <li><a href="#!" onclick="transMatriz(this)">Matriz transpuesta</a></li>
-              <li><a href="#!" onclick="deterMatriz(this)">Determinante</a></li>
-            </ul>
-            <span class="card-title">Matriz 1</span>
-            <div class="tap-target" data-activates="select">
-              <div class="tap-target-content">
-                <h5>Calculos</h5>
-                <p>Para generar los calculos de la matriz selecciona una de las opciones y automaticamente te dara el resultado</p>
+        <div class="col m6 s12" style="padding: 2px">
+          <div class="M1-container card card-default">
+            <div class="card-content">
+              <a class="material-icons valign-wrapper dropdown-button" data-beloworigin="true" href='#' data-activates='dropdownM1' style="float:right;">more_vert</a>
+              <ul id='dropdownM1' class="dropdown-content">
+                <li><a href="#!" onclick="transMatriz(this)">Matriz transpuesta</a></li>
+                <li><a href="#!" onclick="deterMatriz(this)">Determinante</a></li>
+              </ul>
+              <span class="card-title">Matriz 1</span>
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <input id="m1-filas" type="number" min="0" max="25" class="validate">
+                  <label for="m1-filas">Filas</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input id="m1-col" type="number" min="0" max="25" class="validate">
+                  <label for="m1-col">Columnas</label>
+                </div>
               </div>
+              <div class="M1 Matriz row" style="overflow: auto; position: static"></div>
             </div>
-            <div class="row">
-              <div class="input-field col s12 m6">
-                <input id="m1-filas" type="number" min="0" max="25" class="validate">
-                <label for="m1-filas">Filas</label>
-              </div>
-              <div class="input-field col s12 m6">
-                <input id="m1-col" type="number" min="0" max="25" class="validate">
-                <label for="m1-col">Columnas</label>
-              </div>
-            </div>
-            <div class="M1 Matriz row" style="overflow: auto; position: static"></div>
           </div>
         </div>
-        <div class="M2-container card card-default col m6 s12">
-          <div class="card-content">
-            <a class="material-icons valign-wrapper dropdown-button" data-beloworigin="true" href='#' data-activates='dropdownM2' style="float:right;">more_vert</a>
-            <ul id='dropdownM2' class='dropdown-content'>
-              <li><a href="#!" onclick="transMatriz(this)">Matriz transpuesta</a></li>
-              <li><a href="#!" onclick="deterMatriz(this)">Determinante</a></li>
-            </ul>
-            <span class="card-title">Matriz 2</span>
-            <div class="row">
-              <div class="input-field col s12 m6">
-                <input id="m2-filas" type="number" min="0" max="25" class="validate">
-                <label for="m2-filas">Filas</label>
+        <div class="col m6 s12" style="padding: 2px">
+          <div class="M2-container card card-default">
+            <div class="card-content">
+              <a class="material-icons valign-wrapper dropdown-button" data-beloworigin="true" href='#' data-activates='dropdownM2' style="float:right;">more_vert</a>
+              <ul id='dropdownM2' class='dropdown-content'>
+                <li><a href="#!" onclick="transMatriz(this)">Matriz transpuesta</a></li>
+                <li><a href="#!" onclick="deterMatriz(this)">Determinante</a></li>
+              </ul>
+              <span class="card-title">Matriz 2</span>
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <input id="m2-filas" type="number" min="0" max="25" class="validate">
+                  <label for="m2-filas">Filas</label>
+                </div>
+                <div class="input-field col s12 m6">
+                  <input id="m2-col" type="number" min="0" max="25" class="validate">
+                  <label for="m2-col">Columnas</label>
+                </div>
               </div>
-              <div class="input-field col s12 m6">
-                <input id="m2-col" type="number" min="0" max="25" class="validate">
-                <label for="m2-col">Columnas</label>
-              </div>
+              <div class="M2 Matriz row" style="overflow: auto; position: static"></div>
             </div>
-            <div class="M2 Matriz row" style="overflow: auto; position: static"></div>
           </div>
         </div>
-      </div>
-      <div class="row">
+        </div>
+      <div class="row" style="padding: 2px">
         <div class="Result-container card card-default col s12">
           <div class="card-content">
             <span class="card-title">Resultado</span>
@@ -81,7 +84,8 @@
                 <select class="opSelect" onchange="selectOption(this)">
                   <option value="0" selected disabled>Selecciona una opcion</option>
                   <option value="1">Suma</option>
-                  <option value="2">Multiplicacion</option>
+                  <option value="2">Resta</option>
+                  <option value="3">Multiplicacion</option>
                 </select>
               </div>
             </div>
